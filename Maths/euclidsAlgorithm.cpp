@@ -37,6 +37,13 @@ int recGCD(int a, int b){
     if(b==0)return a;
    return recGCD(b, a%b);
 }
+
+// Formula to find LCM is n1*n2/gcd(HCF)
+int lcm(int n1, int n2){
+    int gcd = recGCD(n1, n2);
+    return n1*n2/gcd;
+}
+
 int main()
 {
     int n1, n2;
@@ -46,6 +53,7 @@ int main()
 
     cout<<"Using Resrcion Function: "<<endl;
     cout << recGCD(n1, n2) << " is the greatest common diviser " << endl;
+    cout << lcm(n1, n2) << " is the lowest common multiple between " <<n1 <<" & "<<n2<<endl;
 
     return 0;
 }
